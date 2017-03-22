@@ -2,13 +2,12 @@ package views;
 
 import java.util.Scanner;
 
-import controller.GerePacote;
-import controller.GereParticipante;
 import misc.MData;
 
 public class Principal {
 	
-	VParticipante vpac;
+	VParticipante 	vpac = new VParticipante();
+	VTempos 		vtem = new VTempos();
 	
 	public Principal(){
 		
@@ -24,6 +23,7 @@ public class Principal {
 					opc=0;
 					break;
 				case 2: //Gerir Tempos
+					vtem.GerirTempos();
 					opc=0;
 					break;
 				case 3: //Gerir Reservas
