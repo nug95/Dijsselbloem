@@ -66,20 +66,28 @@ public class VParticipante {
 	}
 	
 	public void listar_participante(){
-		System.out.printf("\n%s", gp.showParticipante().getNome());
-		System.out.printf("\n%s", gp.showParticipante().getNr_kart());
-		System.out.printf("\n%s", gp.showParticipante().getTempo_kart());
-		System.out.printf("\n%s", gp.showParticipante().getEscolha_pacote());
+		if(gp != null){
+			System.out.printf("\nNome do participante: %s", gp.showParticipante().getNome());
+			System.out.printf("\nNumero do Kart: %s", gp.showParticipante().getNr_kart());
+			System.out.printf("\nTempo do participante: %s", gp.showParticipante().getTempo_kart());
+			System.out.printf("\nTipo de pacote: %s", gp.showParticipante().getEscolha_pacote());
+		}else{
+			System.out.printf("\nNao existem participantes!");
+		}
 	}
 	
 	public void procurar_participante(){
 		System.out.printf("Insira o ID para procura: ");
 		int pr = new Scanner(System.in).nextInt();
 		
-		gp.searchParticipante(pr);
-		System.out.printf("\n%s", gp.showParticipante().getNome());
-		System.out.printf("\n%s", gp.showParticipante().getNr_kart());
-		System.out.printf("\n%s", gp.showParticipante().getTempo_kart());
-		System.out.printf("\n%s", gp.showParticipante().getEscolha_pacote());
+		try { 
+			gp.searchParticipante(pr);
+			System.out.printf("\nNome do participante: %s", gp.showParticipante().getNome());
+			System.out.printf("\nNumero do Kart: %s", gp.showParticipante().getNr_kart());
+			System.out.printf("\nTempo do participante: %s", gp.showParticipante().getTempo_kart());
+			System.out.printf("\nTipo de pacote: %s", gp.showParticipante().getEscolha_pacote());
+		} catch(Exception e){
+			System.out.printf("\nNao existem participantes com esse ID!");
+		}
 	}
 }

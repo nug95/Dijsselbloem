@@ -34,9 +34,23 @@ public class GereParticipante {
 		for (Participante p : arParticipante){
 			if(p.getId() == id){
 				return p;
+			}else{
+				return null;
 			}
 		}
 		
 		return null;
+	}
+	
+	public void addTempo(int nr_kart, String tmp){
+		for(Participante p : arParticipante){
+			if (p.getNr_kart() == nr_kart){
+				p.setTempo_kart(tmp);
+				arParticipante.get(p.getId()).setTempo_kart(tmp);
+			}else{
+				System.out.printf("Nao existe correspondencia");
+			}
+		}
+		
 	}
 }

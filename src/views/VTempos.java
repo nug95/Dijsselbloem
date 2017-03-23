@@ -46,10 +46,25 @@ public class VTempos {
 
 	private void adicionar_tempo() {
 		
+		System.out.printf("Qual é o numero do kart que quer adicionar o tempo?");
+		int nr_kart = new Scanner(System.in).nextInt();
+		
+		System.out.printf("Qual é o tempo? [00:00:00]\n");
+		String tmp_kart = new Scanner(System.in).nextLine();
+		
+		gp.addTempo(nr_kart, tmp_kart);
 	}
 
-	private void listar_tempos() {
-		
+	public void listar_tempos() {
+		try	{
+			System.out.printf("\nNome do participante: %s", gp.showParticipante().getNome());
+			System.out.printf("\nNumero do Kart: %s", gp.showParticipante().getNr_kart());
+			System.out.printf("\nTempo do participante: %s", gp.showParticipante().getTempo_kart());
+			System.out.printf("\nTipo de pacote: %s", gp.showParticipante().getEscolha_pacote());
+			System.out.printf("\n");
+		} catch(Exception e){
+			System.out.printf("\nNao existem participantes!");
+		}
 	}
 	
 	private void procurar_tempo() {
