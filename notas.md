@@ -23,6 +23,7 @@
 3. ProcurarParticipante;
     > Apresenta sempre o primeiro participante.
 :::
+
 :::warning
 #### GerirTempos
 1. AdicionarTempo;
@@ -32,6 +33,7 @@
 3. ProcurarTempo;
     > Falta criar.
 :::
+
 :::danger
 #### GerirReservas
 1. Falta criar!
